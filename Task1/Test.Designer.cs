@@ -38,6 +38,8 @@
             radioV1 = new RadioButton();
             buttonAccept = new Button();
             timer1 = new System.Windows.Forms.Timer(components);
+            label1 = new Label();
+            progressBar1 = new ProgressBar();
             groupBox1.SuspendLayout();
             groupBox2.SuspendLayout();
             SuspendLayout();
@@ -48,7 +50,7 @@
             groupBox1.Font = new Font("Segoe UI", 13.8F, FontStyle.Regular, GraphicsUnit.Point, 204);
             groupBox1.Location = new Point(12, 12);
             groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(493, 125);
+            groupBox1.Size = new Size(330, 125);
             groupBox1.TabIndex = 0;
             groupBox1.TabStop = false;
             groupBox1.Text = "Вопрос:";
@@ -59,7 +61,7 @@
             LQuastion.Font = new Font("Segoe UI", 12F, FontStyle.Regular, GraphicsUnit.Point, 204);
             LQuastion.Location = new Point(3, 34);
             LQuastion.Name = "LQuastion";
-            LQuastion.Size = new Size(487, 88);
+            LQuastion.Size = new Size(324, 88);
             LQuastion.TabIndex = 0;
             LQuastion.Text = "label1";
             // 
@@ -137,11 +139,31 @@
             timer1.Interval = 1000;
             timer1.Tick += timer1_Tick;
             // 
+            // label1
+            // 
+            label1.AutoSize = true;
+            label1.Location = new Point(366, 29);
+            label1.Name = "label1";
+            label1.Size = new Size(57, 20);
+            label1.TabIndex = 3;
+            label1.Text = "Время:";
+            // 
+            // progressBar1
+            // 
+            progressBar1.Location = new Point(366, 58);
+            progressBar1.Maximum = 60;
+            progressBar1.Name = "progressBar1";
+            progressBar1.Size = new Size(139, 52);
+            progressBar1.Step = 1;
+            progressBar1.TabIndex = 5;
+            // 
             // Test
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(535, 570);
+            Controls.Add(progressBar1);
+            Controls.Add(label1);
             Controls.Add(buttonAccept);
             Controls.Add(groupBox2);
             Controls.Add(groupBox1);
@@ -151,6 +173,7 @@
             groupBox1.ResumeLayout(false);
             groupBox2.ResumeLayout(false);
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
@@ -164,5 +187,7 @@
         private Button buttonAccept;
         private Label LQuastion;
         private System.Windows.Forms.Timer timer1;
+        private Label label1;
+        private ProgressBar progressBar1;
     }
 }

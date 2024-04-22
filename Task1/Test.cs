@@ -68,6 +68,14 @@ namespace Task1
         private void timer1_Tick(object sender, EventArgs e)
         {
             Time++;
+            progressBar1.PerformStep();
+            if (Time == 60)
+            {
+                
+                timer1.Stop();
+                MessageBox.Show($"Ваш результат: {Score} балов из {questions.Count} за {Time.ToString()} секунд");
+                Close();
+            }
         }
     }
 }
